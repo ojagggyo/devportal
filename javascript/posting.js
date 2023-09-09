@@ -37,7 +37,7 @@ module.exports.createPost = async (username, key, category, title, body, imageur
         );
 };
 
-// 100% パワーアップ
+// 報酬を100%パワーアップで受け取る
 module.exports.createPostPowerup100 = async (username, key, category, title, body, imageurl) => {
  
     parent_permlink = category;
@@ -61,7 +61,7 @@ module.exports.createPostPowerup100 = async (username, key, category, title, bod
         title: title,
     };
 
-    // オプション（100% パワーアップ）
+    // オプション（報酬を100%パワーアップで受け取る）
     const option = {
         author: username,
         permlink: permlink,
