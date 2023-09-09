@@ -1,3 +1,5 @@
+[[dev] Claim Account Ticket アカウントチケットを請求する](https://steemit.com/japanese/@yasu/dev-claim-account-ticket)
+
 cd devportal 
 cd claim_account 
 npm init 
