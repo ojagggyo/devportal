@@ -1,7 +1,7 @@
 const dsteem = require('dsteem');
 const client = new dsteem.Client('https://api.steememory.com');
 
-
+// 通常の投稿（50% SBD / 50% SP）
 module.exports.createPost = async (username, key, category, title, body, imageurl) => {
  
     parent_permlink = category;
@@ -37,6 +37,7 @@ module.exports.createPost = async (username, key, category, title, body, imageur
         );
 };
 
+// 100% パワーアップ
 module.exports.createPostPowerup100 = async (username, key, category, title, body, imageurl) => {
  
     parent_permlink = category;
@@ -59,7 +60,8 @@ module.exports.createPostPowerup100 = async (username, key, category, title, bod
         permlink: permlink,
         title: title,
     };
-    
+
+    // オプション（100% パワーアップ）
     const option = {
         author: username,
         permlink: permlink,
@@ -83,7 +85,7 @@ module.exports.createPostPowerup100 = async (username, key, category, title, bod
         );
 };
 
-
+// 報酬を受け取らない
 module.exports.createPostDeclinePayout = async (username, key, category, title, body, imageurl) => {
 
     parent_permlink = category;
@@ -106,7 +108,8 @@ module.exports.createPostDeclinePayout = async (username, key, category, title, 
         permlink: permlink,
         title: title,
     };
-    
+
+    // オプション（報酬を受け取らない）
     const option = {
         author: username,
         permlink: permlink,
