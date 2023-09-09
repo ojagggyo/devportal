@@ -2,7 +2,7 @@ const dsteem = require('dsteem')
 const client = new dsteem.Client('https://api.steememory.com');
 
 // アカウント情報を取得する。
-module.exports.getAccount = async (username) => {
+module.exports.getAccountSync = async (username) => {
     
     // 同期
     let account = await client.database.call('get_accounts', [[username]]);
@@ -26,6 +26,6 @@ module.exports.getAccountAsync = async (username) => {
 };
 
 
-
+// 呼び出し方法
 this.getAccountAsync("yasu")
-this.getAccount("yasu")
+this.getAccountSync("yasu")

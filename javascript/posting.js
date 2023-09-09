@@ -4,14 +4,15 @@ const client = new dsteem.Client('https://api.steememory.com');
 // 通常の投稿（50% SBD / 50% SP）
 module.exports.createPost = async (username, key, category, title, body, imageurl) => {
  
-    parent_permlink = category;
-    const taglist = `${category}`.split(' ');
+    const categoryList = `${category}`.split(' ');
+    const imageurlList = `${imageurl}`.split(' ');
+    const parent_permlink = taglist[0];
     const json_metadata = JSON.stringify(
         { 
-            tags: taglist ,
-            image: [imageurl] 
+            tags: categoryList,
+            image: imageurlList
         }
-        );
+    );
 
     const permlink = Math.random().toString(36).substring(2)
 
@@ -40,14 +41,16 @@ module.exports.createPost = async (username, key, category, title, body, imageur
 // 報酬を100%パワーアップで受け取る
 module.exports.createPostPowerup100 = async (username, key, category, title, body, imageurl) => {
  
-    parent_permlink = category;
-    const taglist = `${category}`.split(' ');
+    const categoryList = `${category}`.split(' ');
+    const imageurlList = `${imageurl}`.split(' ');
+    const parent_permlink = taglist[0];
     const json_metadata = JSON.stringify(
         { 
-            tags: taglist ,
-            image: [imageurl] 
+            tags: categoryList,
+            image: imageurlList
         }
-        );
+    );
+
 
     const permlink = Math.random().toString(36).substring(2)
 
@@ -88,14 +91,15 @@ module.exports.createPostPowerup100 = async (username, key, category, title, bod
 // 報酬を受け取らない
 module.exports.createPostDeclinePayout = async (username, key, category, title, body, imageurl) => {
 
-    parent_permlink = category;
-    const taglist = `${category}`.split(' ');
+    const categoryList = `${category}`.split(' ');
+    const imageurlList = `${imageurl}`.split(' ');
+    const parent_permlink = taglist[0];
     const json_metadata = JSON.stringify(
         { 
-            tags: taglist ,
-            image: [imageurl] 
+            tags: categoryList,
+            image: imageurlList
         }
-        );
+    );
 
     const permlink = Math.random().toString(36).substring(2)
 
@@ -131,3 +135,13 @@ module.exports.createPostDeclinePayout = async (username, key, category, title, 
             }
         );
 };
+
+
+
+ // 呼び出し方法
+// this.createPost(    "yasu.pal", 
+//                     dsteem.PrivateKey.fromString("<Posting_Key>"), 
+//                     "category1 category2", 
+//                     "title", 
+//                     "body", 
+//                     "url1 url2")
