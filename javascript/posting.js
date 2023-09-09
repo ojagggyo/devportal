@@ -1,7 +1,43 @@
 const dsteem = require('dsteem');
 const client = new dsteem.Client('https://api.steememory.com');
 
+
 module.exports.createPost = async (username, key, category, title, body, imageurl) => {
+ 
+    parent_permlink = category;
+    const taglist = `${category}`.split(' ');
+    const json_metadata = JSON.stringify(
+        { 
+            tags: taglist ,
+            image: [imageurl] 
+        }
+        );
+
+    const permlink = Math.random().toString(36).substring(2)
+
+    const post = {
+        author: username,
+        body: body,
+        json_metadata: json_metadata,
+        parent_author: '',
+        parent_permlink: parent_permlink,
+        permlink: permlink,
+        title: title,
+    };
+
+    client.broadcast
+        .comment(post, key)
+        .then(
+            function(result) {
+                console.log(result);
+            },
+            function(error) {
+                console.error(error);
+            }
+        );
+};
+
+module.exports.createPostPowerup100 = async (username, key, category, title, body, imageurl) => {
  
     parent_permlink = category;
     const taglist = `${category}`.split(' ');
@@ -45,12 +81,7 @@ module.exports.createPost = async (username, key, category, title, body, imageur
                 console.error(error);
             }
         );
-
-
-    console.log('*** createPost終了 ***');
 };
-
-
 
 
 module.exports.createPostDeclinePayout = async (username, key, category, title, body, imageurl) => {
@@ -87,7 +118,6 @@ module.exports.createPostDeclinePayout = async (username, key, category, title, 
     };
 
     client.broadcast
-        //.comment(post, key)
         .commentWithOptions(post, option, key)
         .then(
             function(result) {
@@ -97,7 +127,4 @@ module.exports.createPostDeclinePayout = async (username, key, category, title, 
                 console.error(error);
             }
         );
-
-
-    console.log('*** createPost終了 ***');
 };
