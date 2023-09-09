@@ -2,9 +2,7 @@ const dsteem = require('dsteem');
 const client = new dsteem.Client('https://api.steememory.com');
 
 module.exports.createPost = async (username, key, category, title, body, imageurl) => {
-
-    console.log(`*** createPost ${username} 非表示 ${category} ${title} ${body} ***`);
-
+ 
     parent_permlink = category;
     const taglist = `${category}`.split(' ');
     const json_metadata = JSON.stringify(
@@ -56,8 +54,6 @@ module.exports.createPost = async (username, key, category, title, body, imageur
 
 
 module.exports.createPostDeclinePayout = async (username, key, category, title, body, imageurl) => {
-
-    console.log(`*** createPost ${username} 非表示 ${category} ${title} ${body} ***`);
 
     parent_permlink = category;
     const taglist = `${category}`.split(' ');
