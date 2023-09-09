@@ -7,3 +7,7 @@ npm i dsteem
 
 実行
 node app.js yasu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+
+
+## claimAccount
+カウントチケットを請求する
