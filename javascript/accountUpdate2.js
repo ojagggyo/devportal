@@ -1,6 +1,7 @@
 const dsteem = require('dsteem')
 const client = new dsteem.Client('https://api.steememory.com');
 
+// プロフィールを更新する。
 module.exports.updateCoverImage = async (username, privateKey, location, cover_image) => {
     
     let account = await client.database.call('get_accounts', [[username]]);

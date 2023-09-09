@@ -3,7 +3,7 @@ const client = new dsteem.Client('https://api.steememory.com');
 
 module.exports.claimAccount = async (username, privateKey) => {
     
-await client.database.call('get_accounts', [[username]]);
+    await client.database.call('get_accounts', [[username]]);
 
     const op = [
         'claim_account',
