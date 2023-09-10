@@ -8,7 +8,7 @@ module.exports.findRCAccounts = async (username) => {
             console.log(JSON.stringify(result));
         },
         function(error) {
-            console.error(error);
+            console.error(JSON.stringify(error));
         }
     )
 };
