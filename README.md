@@ -9,6 +9,14 @@ git clone https://github.com/ojagggyo/devportal.git
 
 
 ## 環境変数の設定方法
-pwsh(Power Shell)の場合
+#### pwsh(Power Shell)の場合（必ずクォーテーションで囲む）
 $env:ACCOUNT_NAME = "<username>"
 $env:ACTIVE_KEY = "<active_key>"
+
+#### cmd(Command Prompt)の場合
+set ACCOUNT_NAME=<username>
+set ACTIVE_KEY=<active_key>
+
+#### bashの場合（スペースを空けない）
+export ACCOUNT_NAME=<username>
+export ACTIVE_KEY=<active_key>
