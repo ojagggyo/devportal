@@ -1,7 +1,7 @@
 const dsteem = require('dsteem')
 const client = new dsteem.Client('https://api.steememory.com');
 
-module.exports.claimAccount = async (username, privateKey) => {
+claimAccount = async (username, privateKey) => {
     
     const op = [
         'claim_account',
@@ -22,9 +22,13 @@ module.exports.claimAccount = async (username, privateKey) => {
     );
 
  };
+ module.exports.claimAccount
 
 
  // 呼び出し方法
 const acount_name = process.env.ACCOUNT_NAME;
 const active_key = process.env.ACTIVE_KEY;
-this.claimAccount(acount_name, dsteem.PrivateKey.fromString(active_key))
+console.error("acount_name",acount_name);
+console.error("active_key",active_key?"***":"---");
+if(!active_key) return;
+claimAccount(acount_name, dsteem.PrivateKey.fromString(active_key))
