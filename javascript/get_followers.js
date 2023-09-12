@@ -1,7 +1,7 @@
 const dsteem = require('dsteem')
 const client = new dsteem.Client('https://api.steememory.com');
 
-module.exports.getFollowers = async (username) => {
+getFollowers = async (username) => {
     return new Promise((resolve, reject) => {
 		(async() => {
             //NG client.call('follow_api','get_followers',{account:username,start:'',type:'blog',limit:10}).then(
@@ -16,11 +16,12 @@ module.exports.getFollowers = async (username) => {
         })();
     });
 };
+module.exports.getFollowers
 
 // Sync sample
-async function mainSync(acount_name){ 
+mainSync = async (acount_name) => { 
     try {
-        const ret = await module.exports.getFollowers(acount_name)
+        const ret = await getFollowers(acount_name)
         console.log("★★★ ok", JSON.stringify(ret))
     } catch (e) {
         console.log("★★★ error",JSON.stringify(e))
@@ -28,8 +29,8 @@ async function mainSync(acount_name){
  }
 
 // Async sample
-async function mainAsync(acount_name){ 
-    module.exports.getFollowers(acount_name).then(
+mainAsync = async (acount_name) => { 
+    getFollowers(acount_name).then(
         (data) => {
           console.log("☆☆☆ ok", JSON.stringify(data));
         },
@@ -41,4 +42,3 @@ async function mainAsync(acount_name){
  
 mainAsync("yasu")
 mainSync("yasu.witness")
- 
