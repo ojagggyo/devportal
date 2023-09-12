@@ -25,5 +25,6 @@ module.exports.claimAccount = async (username, privateKey) => {
 
 
  // 呼び出し方法
- //this.claimAccount("yasu", dsteem.PrivateKey.fromString("<active_key>"))
- 
+const acount_name = process.env.ACCOUNT_NAME;
+const active_key = process.env.ACTIVE_KEY;
+this.claimAccount(acount_name, dsteem.PrivateKey.fromString(active_key))

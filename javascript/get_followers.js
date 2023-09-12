@@ -17,29 +17,28 @@ module.exports.getFollowers = async (username) => {
     });
 };
 
-// 同期
+// Sync sample
 async function mainSync(acount_name){ 
     try {
         const ret = await module.exports.getFollowers(acount_name)
-        console.log("★★★", JSON.stringify(ret))
+        console.log("★★★ ok", JSON.stringify(ret))
     } catch (e) {
-        console.log("mainSync error",JSON.stringify(e))
+        console.log("★★★ error",JSON.stringify(e))
     }
  }
 
-// 非同期
+// Async sample
 async function mainAsync(acount_name){ 
     module.exports.getFollowers(acount_name).then(
         (data) => {
-          console.log("☆☆☆", JSON.stringify(data));
+          console.log("☆☆☆ ok", JSON.stringify(data));
         },
         (e) => {
-          console.log("mainAsync error", e);
+          console.log("☆☆☆ error", e);
         }
     )
  }
  
-// 呼び出し方法
 mainAsync("yasu")
 mainSync("yasu.witness")
  
