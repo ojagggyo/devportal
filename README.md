@@ -6,31 +6,34 @@ git clone git@github.com:ojagggyo/devportal.git
 git clone https://github.com/ojagggyo/devportal.git
 
 
-
-## findRCAccounts
-
-
-## claim_account
-
-
+# Follow Api
 ## get_followers
-
-
 ## get_following
 
 
+# Rc Api
+## findRCAccounts
+
+
+# Broadcast Ops
+## claim_account
 
 
 
-## 環境変数の設定方法
-#### pwsh(Power Shell)の場合（必ずクォーテーションで囲む）
-$env:ACCOUNT_NAME = "<username>"
-$env:ACTIVE_KEY = "<active_key>"
+# MEMO
 
-#### cmd(Command Prompt)の場合
+
+
+# 環境変数の設定方法
+
+## cmd(Command Prompt)の場合
 set ACCOUNT_NAME=<username>
 set ACTIVE_KEY=<active_key>
 
-#### bashの場合（スペースを空けない）
+## bashの場合（スペースを空けない）
 export ACCOUNT_NAME=<username>
 export ACTIVE_KEY=<active_key>
+
+## pwsh(Power Shell)の場合（必ずクォーテーションで囲む）
+$env:ACCOUNT_NAME = "<username>"
+$env:ACTIVE_KEY = "<active_key>"
