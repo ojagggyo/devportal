@@ -7,6 +7,20 @@ git clone https://github.com/ojagggyo/devportal.git
 
 
 
+## findRCAccounts
+
+
+## claim_account
+
+
+## get_followers
+
+
+## get_following
+
+
+
+
 
 ## 環境変数の設定方法
 #### pwsh(Power Shell)の場合（必ずクォーテーションで囲む）

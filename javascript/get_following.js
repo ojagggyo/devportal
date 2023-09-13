@@ -1,10 +1,10 @@
 const dsteem = require('dsteem')
 const client = new dsteem.Client('https://api.steememory.com');
 
-findRCAccounts = async (username) => {
+getFollowing = async (username) => {
     return new Promise((resolve, reject) => {
 		(async() => {
-            client.call('rc_api','find_rc_accounts', {"accounts":[username]} ).then(
+            client.call('follow_api','get_following',[username,"","blog",10]).then(
                 function(result) {
                     resolve(result)
                 },
@@ -15,12 +15,12 @@ findRCAccounts = async (username) => {
         })();
     });
 };
-module.exports.findRCAccounts
+module.exports.getFollowing
 
 // Sync sample
 mainSync = async (acount_name) => { 
     try {
-        const ret = await getFollowers(acount_name)
+        const ret = await getFollowing(acount_name)
         console.log("★★★ ok", JSON.stringify(ret))
     } catch (e) {
         console.log("★★★ error",JSON.stringify(e))
@@ -29,7 +29,7 @@ mainSync = async (acount_name) => {
 
 // Async sample
 mainAsync = async (acount_name) => { 
-    getFollowers(acount_name).then(
+    getFollowing(acount_name).then(
         (data) => {
           console.log("☆☆☆ ok", JSON.stringify(data));
         },
@@ -39,7 +39,5 @@ mainAsync = async (acount_name) => {
     )
  }
  
-// 呼び出し方法
 mainAsync("yasu")
 mainSync("yasu.witness")
- 
