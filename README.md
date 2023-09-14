@@ -9,6 +9,7 @@ git clone https://github.com/ojagggyo/devportal.git
 # Follow Api
 ## get_followers
 ## get_following
+## get_account_reputations
 
 
 # Rc Api
