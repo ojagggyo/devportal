@@ -1,10 +1,10 @@
 const dsteem = require('dsteem')
 const client = new dsteem.Client('https://api.steememory.com');
 
-module.exports.getFollowing = async (username) => {   
-    client.call('follow_api','get_following',[username,"","blog",10]).then(
+module.exports.getXxx = async (api, method, params) => {
+    client.call(api,method,params).then(
         function(result) {
-            console.log('follow_api','get_following')
+            console.log('\n', api, method,JSON.stringify(params))
             console.log(JSON.stringify(result))
         },
         function(error) {
@@ -12,6 +12,3 @@ module.exports.getFollowing = async (username) => {
         }
     )
 }
-
-
-//this.getFollowing("yasu.witness")

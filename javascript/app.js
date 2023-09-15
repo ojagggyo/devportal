@@ -1,17 +1,20 @@
-const dsteem = require('dsteem')
-const app = require('./app_claimAccount.js')
+// const get_following = require('./get_following.js')
+// const get_followers = require('./get_followers.js')
+// const get_accounts = require('./get_accounts.js')
+// const get_account_reputations = require('./get_account_reputations.js')
+// const get_follow_count = require('./get_follow_count.js')
+// const find_rc_accounts = require('./find_rc_accounts.js')
+// get_following.getFollowing("yasu.witness")
+// get_followers.getFollowers("yasu.witness")
+// get_accounts.getAccounts("yasu.witness")
+// get_account_reputations.getAccountReputations("yasu.witness")
+// get_follow_count.getFollowCount("yasu.witness")
+// find_rc_accounts.findRCAccounts("yasu.witness")
 
-//コマンドパラメータ取得
-let [acount_name, active_key] = process.argv.slice(2)
-if (!acount_name || !active_key) {
-    process.stderr.write(`Usage: ./app.js <acount_name> <active_key>\n`)
-    process.exit(1)
-}
-console.log(`acount_name=${acount_name}`);
-console.log(`active_key=非表示`);
-
-async function main(acount_name, key){ 
-   app.claimAccount(acount_name, key)
-}
-
-main(acount_name, dsteem.PrivateKey.fromString(active_key))
+const xxx = require('./get_xxx.js')
+xxx.getXxx('follow_api','get_following',["yasu.witness","","blog",10])
+xxx.getXxx('follow_api','get_followers',["yasu.witness", "", "blog", 10])
+xxx.getXxx('condenser_api','get_accounts',[["yasu.witness"]])
+xxx.getXxx('condenser_api','get_account_reputations',["yasu.witness", 1])
+xxx.getXxx('condenser_api','get_follow_count',["yasu.witness"])
+xxx.getXxx('rc_api','find_rc_accounts',{"accounts":["yasu.witness"]} )
