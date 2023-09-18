@@ -11,10 +11,14 @@
 // get_follow_count.getFollowCount("yasu.witness")
 // find_rc_accounts.findRCAccounts("yasu.witness")
 
-const xxx = require('./get_xxx.js')
-xxx.getXxx('follow_api','get_following',["yasu.witness","","blog",10])
-xxx.getXxx('follow_api','get_followers',["yasu.witness", "", "blog", 10])
-xxx.getXxx('condenser_api','get_accounts',[["yasu.witness"]])
-xxx.getXxx('condenser_api','get_account_reputations',["yasu.witness", 1])
-xxx.getXxx('condenser_api','get_follow_count',["yasu.witness"])
-xxx.getXxx('rc_api','find_rc_accounts',{"accounts":["yasu.witness"]} )
+const xxx = require('./call.js')
+// xxx.call('follow_api','get_following',["yasu.witness","","blog",10])
+// xxx.call('follow_api','get_followers',["yasu.witness", "", "blog", 10])
+// xxx.call('condenser_api','get_accounts',[["yasu.witness"]])
+// xxx.call('condenser_api','get_account_reputations',["yasu.witness", 1])
+// xxx.call('condenser_api','get_follow_count',["yasu.witness"])
+// xxx.call('rc_api','find_rc_accounts',{"accounts":["yasu.witness"]} )
+
+//bridge
+xxx.call('bridge','get_ranked_posts', {"sort":"trending","tag":"","observer":"alice"})
+
