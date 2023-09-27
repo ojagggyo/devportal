@@ -24,7 +24,14 @@ const xxx = require('./call.js')
 
 xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
     function(result) {
-        console.log(JSON.stringify(result))
+        //console.log(JSON.stringify(result))
+
+        for (let index = 0; index < result.length; index++) {
+            let witness = result[index];
+
+            
+            console.log(witness.owner+"\n")
+        }
     },
     function(error) {
         console.log(error)
