@@ -20,5 +20,13 @@ const xxx = require('./call.js')
 // xxx.call('rc_api','find_rc_accounts',{"accounts":["yasu.witness"]} )
 
 //bridge
-xxx.call('bridge','get_ranked_posts', {"sort":"trending","tag":"","observer":"alice"})
+//xxx.call('bridge','get_ranked_posts', {"sort":"trending","tag":"","observer":"alice"})
 
+xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
+    function(result) {
+        console.log(JSON.stringify(result))
+    },
+    function(error) {
+        console.log(error)
+    }
+)

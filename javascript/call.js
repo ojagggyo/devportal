@@ -14,4 +14,19 @@ module.exports.call = async (api, method, params) => {
 }
 
 
+module.exports.callAsync  =  async (api, method, params) => {
+    return new Promise((resolve, reject) => {
+		(async() => {
+            client.call(api,method,params).then(
+                function(result) {
+                    resolve(result)
+                },
+                function(error) {
+                    reject(error)
+                }
+            )
+        })();
+    });
+};
+
 
