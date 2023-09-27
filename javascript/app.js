@@ -28,7 +28,7 @@ xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
 
         for (let index = 0; index < result.length; index++) {
             let witness = result[index]
-            if (witness.owner != "yasu/witness"){
+            if (witness.owner != "yasu.witness"){
                 continue
             }
             console.log(index+1,witness.owner)
