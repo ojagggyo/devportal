@@ -30,7 +30,7 @@ xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
             let witness = result[index];
 
             
-            console.log(witness.owner+"\n")
+            console.log(witness.owner)
         }
     },
     function(error) {
