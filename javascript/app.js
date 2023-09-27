@@ -31,7 +31,7 @@ xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
             if (witness.owner != "yasu.witness"){
                 continue
             }
-            console.log(index+1,witness.owner,witness.votes)
+            console.log(index+1,witness.owner,witness.votes/10^6/1024^2)
         }
     },
     function(error) {
