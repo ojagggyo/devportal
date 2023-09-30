@@ -22,19 +22,22 @@ const xxx = require('./call.js')
 //bridge
 //xxx.call('bridge','get_ranked_posts', {"sort":"trending","tag":"","observer":"alice"})
 
-xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
-    function(result) {
-        //console.log(JSON.stringify(result))
+//非同期
+// xxx.callAsync("condenser_api","get_witnesses_by_vote", ["",107]).then(
+//     function(result) {
+//         //console.log(JSON.stringify(result))
 
-        for (let index = 0; index < result.length; index++) {
-            let witness = result[index]
-            if (witness.owner != "yasu.witness"){
-                continue
-            }
-            console.log(index+1,witness.owner,witness.votes,Math.round(witness.votes/1000000000000)+"MV")
-        }
-    },
-    function(error) {
-        console.log(error)
-    }
-)
+//         for (let index = 0; index < result.length; index++) {
+//             let witness = result[index]
+//             if (witness.owner != "yasu.witness"){
+//                 continue
+//             }
+//             console.log(index+1,witness.owner,witness.votes,Math.round(witness.votes/1000000000000)+"MV")
+//         }
+//     },
+//     function(error) {
+//         console.log(error)
+//     }
+// )
+
+

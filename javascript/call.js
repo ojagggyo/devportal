@@ -27,6 +27,5 @@ module.exports.callAsync  =  async (api, method, params) => {
             )
         })();
     });
-};
-
+}
 
