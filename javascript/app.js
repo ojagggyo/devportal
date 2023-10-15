@@ -18,6 +18,7 @@ const xxx = require('./call.js')
 // xxx.call('condenser_api','get_account_reputations',["yasu.witness", 1])
 // xxx.call('condenser_api','get_follow_count',["yasu.witness"])
 // xxx.call('rc_api','find_rc_accounts',{"accounts":["yasu.witness"]} )
+xxx.call('condenser_api','get_content ',["yasu","2csj3l.json"] )
 
 //bridge
 //xxx.call('bridge','get_ranked_posts', {"sort":"trending","tag":"","observer":"alice"})
