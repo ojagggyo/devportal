@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "dsteem": "^0.11.3"
+    "amount": "^1.0.6",
+    "dsteem": "^0.11.3",
+    "steem": "^0.7.11"
   }
 }
