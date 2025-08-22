@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SBD Debt Ratio</title>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://github.com/steemit/steem-js/releases/download/v0.7.7/steem.min.js"></script>
+        
+        <script>            
+
+            steem.api.setOptions({url: 'https://api.steemit.com'});
+
+            async function getDynamicGlobalPropertiesxxx(){
+                let result = steem.api.getCurrentMedianHistoryPrice();
+                console.log('getDynamicGlobalProperties');
+                console.log(result);
+                return result;
+            }
+
+            async function getCurrentMedianHistoryPricexxx(){
+                let result = steem.api.getCurrentMedianHistoryPrice();
+                console.log('getCurrentMedianHistoryPrice');
+                console.log(result);
+                return result;
+            }
+          
+            async function main(){
+                let a = await getDynamicGlobalPropertiesxxx();
+                let current_sbd_supply = Number.parseFloat(a.current_sbd_supply);
+                let virtual_supply = Number.parseFloat(a.virtual_supply);
+                let b = await getCurrentMedianHistoryPricexxx();
+                let steem_price = b.base.amount / b.quote.amount;
+                return current_sbd_supply * 100 / (virtual_supply * steem_price);
+            }
+
+            window.onload = function() {
+                $("#text").text(main());                
+            };
+        </script>
+    </head>
+    <body>
+        <h1 id="text"></h1>
+    </body>
+</html>
+
